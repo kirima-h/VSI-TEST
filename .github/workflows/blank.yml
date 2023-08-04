@@ -34,3 +34,14 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+  local:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: For Test Local Runner
+        run: |
+          echo "For Test self-hosted local runner"
+          current_date=`date -d "8 hours" +%Y%m%d"_"%H%M`
+          mkdir -p /home/vip_sqa/20230803
